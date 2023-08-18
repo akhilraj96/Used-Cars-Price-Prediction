@@ -17,7 +17,7 @@ def get_requrements(file_path: str) -> List[str]:
 
 setup(
     name='Used-Cars-Price-Prediction',
-    version='0.0.1',
+    version='1.0.0',
     author='Akhil Raj',
     author_email='akhil_raj@outlook.com',
     packages=find_packages(),
