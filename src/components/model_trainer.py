@@ -111,6 +111,7 @@ class ModelTrainer:
                 raise CustomException("All models are less than 60%")
 
             logging.info("Best found model on testing data")
+            print("Best model : ", best_model_name)
 
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
@@ -136,4 +137,4 @@ if __name__ == "__main__":
 
     model = ModelTrainer()
     r2_score = model.initiate_model_trainer(train_array, test_array)
-    print("R2 Score:", r2_score)
+    print("R2 Score : ", r2_score)

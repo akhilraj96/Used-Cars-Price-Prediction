@@ -44,7 +44,7 @@ class DataTransformation:
         data['Power'] = data['Power'].str.rstrip(' bhp')
         data['Engine'] = data['Engine'].astype('float')
         data['Power'] = pd.to_numeric(data['Power'], errors='coerce')
-        data['brand'] = data['Name'].str.split(' ').str[0]
+        data['brand'] = data['Name'].str.upper().str.split(' ').str[0]
         data.drop('Name', axis=1, inplace=True)
 
         return data
@@ -73,7 +73,7 @@ class DataTransformation:
 
             num_pipeline = Pipeline(
                 steps=[
-                    ("imputer", SimpleImputer(strategy="median")),
+                    ("imputer", SimpleImputer(strategy="mean")),
                     ("scalar", StandardScaler())
                 ]
             )
